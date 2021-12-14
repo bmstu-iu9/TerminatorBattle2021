@@ -1,0 +1,9 @@
+[x,y]
+h(y,x) -> f(y,g(x))
+g(g(g(g(a)))) -> c
+f(a,b) -> a
+f(b, a) -> h(a,a)
+f(x,y) -> h(g(x),y)
+f(h(a,b),h(b,a)) -> h(h(a,b),f(a,b))
+h(x,c) -> g(x)
+h(g(a),g(b)) -> h(a,b)

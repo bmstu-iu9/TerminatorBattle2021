@@ -1,0 +1,7 @@
+[x]
+g(h(g(f(x)))) -> f(f(g(f(f(h(x))))))
+f(h(g(f(g(x))))) -> f(f(f(h(g(f(x))))))
+f(g(h(g(g(x))))) -> h(g(g(f(x))))
+h(h(h(g(g(x))))) -> f(g(f(f(h(x)))))
+h(h(g(g(g(x))))) -> h(h(f(f(f(h(x))))))
+ 

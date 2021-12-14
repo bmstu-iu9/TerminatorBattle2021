@@ -1,0 +1,6 @@
+[x,y,z,w]
+g(g(x)) -> f(g(h(x)))
+h(h(x)) -> f(g(h(x)))
+f(f(x)) -> f(g(h(x)))
+f(x) -> x
+g(x) -> x

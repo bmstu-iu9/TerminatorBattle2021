@@ -1,0 +1,9 @@
+[n,x,y]
+g(g(x)) -> f(g(h(x)))
+h(h(x)) -> f(g(h(x)))
+f(g(x)) -> f(q(q(x)))
+q(q(q(q(q(x))))) -> q(q(x))
+f(x) ->x
+f(f(x)) -> f(g(h(x)))
+s(q(x),y) -> q(s(x,q(y)))
+g(a) -> f(a)

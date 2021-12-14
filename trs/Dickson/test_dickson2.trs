@@ -1,0 +1,3 @@
+[x,y]
+f(f(h(x),A),y) -> h(h(f(x,y)))
+k(h(h(h(x)))) -> f(k(k(k(x))),A) 

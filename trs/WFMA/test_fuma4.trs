@@ -1,0 +1,3 @@
+[x]
+f(g(x),g(y)) -> g(f(x,y))
+f(x,f(y,z)) -> f(f(x,y),z)

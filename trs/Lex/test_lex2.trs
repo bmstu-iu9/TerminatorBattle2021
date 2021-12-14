@@ -1,0 +1,6 @@
+[x]
+h(g(x)) -> h(h(x))
+h(f(f(x))) -> h(g(x))
+f(f(g(x))) -> h(g(x))
+g(g(g(x))) -> g(g(h(x)))
+f(g(g(x))) -> g(g(h(x)))

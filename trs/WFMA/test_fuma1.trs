@@ -1,0 +1,5 @@
+[z]
+ap(x,ap(y,z)) -> ap(ap(x,y), z)
+ap(x,y) -> ap(y,x)
+ap(x,e) -> x
+ap(e,x) -> x
