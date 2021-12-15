@@ -1,0 +1,33 @@
+$ENTRY Go
+  { 
+	= <CountResults>;
+  }
+
+CountResults
+ {
+  = <Open 'r' 1 'pass.txt'><Count  0 0 0 0 0 0 <Get 1>><Close 1>;
+}
+
+Count {
+ s.1 s.2 s.3 s.4 s.5 s.6 e.X 0 = <PrintResults <Eval s.1 s.2 s.3 s.4 s.5 s.6 e.X>>;
+ s.1 s.2 s.3 s.4 s.5 s.6 e.X = <Count <Eval s.1 s.2 s.3 s.4 s.5 s.6 e.X> <Get 1>>;	
+}
+
+PrintResults {
+	s.1 s.2 s.3 s.4 s.5 s.6 = <Prout 'Total 's.1' tests are passed successfully.'>
+	<Prout 'Total 's.2' tests are passed inconsistently.'>
+	<Prout 'Total 's.3' monsters are faced.'>
+	<Prout 'Total 's.4' syntax errors are found.'>
+	<Prout 'Total 's.5' syntax errors are misfound.'>
+	<Prout 'Total 's.6' timeouts are reached.'>;
+}
+
+Eval {
+  s.1 s.2 s.3 s.4 s.5 s.6 e.X1'pass'e.X2 = <Add s.1 1> s.2 s.3 s.4 s.5 s.6;	
+  s.1 s.2 s.3 s.4 s.5 s.6 e.X1'inconsist'e.X2 = s.1 <Add s.2 1> s.3 s.4 s.5 s.6;	
+  s.1 s.2 s.3 s.4 s.5 s.6 e.X1'faced'e.X2 = s.1 s.2 <Add s.3 1> s.4 s.5 s.6;	
+  s.1 s.2 s.3 s.4 s.5 s.6 e.X1'time out'e.X2 = s.1 s.2 s.3 s.4 s.5 <Add s.6 1>;	
+  s.1 s.2 s.3 s.4 s.5 s.6 e.X1'correctly'e.X2 = s.1 s.2 s.3 <Add s.4 1> s.5 s.6;	
+  s.1 s.2 s.3 s.4 s.5 s.6 e.X'Syntax'e.Y = s.1 s.2 s.3 s.4 <Add s.5 1> s.6;	
+  s.1 s.2 s.3 s.4 s.5 s.6 e.Z = s.1 s.2 s.3 s.4 s.5 s.6;
+}

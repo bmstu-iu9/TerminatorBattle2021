@@ -1,0 +1,66 @@
+$ENTRY Go
+  { 
+	= <Openpass><TestCheck (<GetResult>)<GetWitness>><Close 3>;
+  }
+  
+Openpass {
+ , <ExistFile 'pass.txt'> :
+ {True = <Open 'a' 3 'pass.txt'>;
+  False = <Open 'w' 3 'pass.txt'>;
+  };
+}
+
+GetResult {
+  = <Reform <GetResultFile>>;
+}
+
+GetResultFile {
+ , <ExistFile 'result'> :
+ { True = <Open 'r' 1 'result'> <Get 1> <Close 1>;
+   False = 'Timeout';
+ };
+}
+
+Reform {
+ e.1'true'e.2 = 'True';
+ e.1'TRUE'e.2 = 'True';
+ e.1'True'e.2 = 'True';
+ e.1'false'e.2 = 'False';
+ e.1'FALSE'e.2 = 'False';
+ e.1'False'e.2 = 'False';
+ e.1'yntax'e.2 = 'Syntax_error';
+ e.1'SYNTAX'e.2 = 'Syntax_error';
+ e.1'nknow'e.2 = 'Unknown';
+ e.1'UNKN'e.2 = 'Unknown';
+ e.Z = 'Timeout';
+}
+
+Split {
+ 'Test'e.Number' 'e.Witness = (e.Number)<Decode e.Witness>;
+}
+
+GetWitness {
+ = <Open 'r' 2 'witness.txt'><Split <Get 2>><Close 2>;
+}
+
+Decode {
+   e.1'SYNTAX'e.2 = 'Syntax_error';
+   e.x
+   , e.x : e.x1 s.1 e.z1 s.2 e.x2
+   , s.1 e.z1 s.2 s.1 e.z1 s.2 : e.z22 s.3 s.4 s.1 e.z1 s.2 e.z23
+   , s.1 e.z1 s.2 : e.z22 s.3 s.4 s.5 e.z24
+     = 'False';
+   e.x, e.x : e.x4 e.x3 e.x1 s.x1 e.x4 e.x2 s.x1 e.x3 = 'True';
+   e.x = 'Monster';
+}
+
+
+TestCheck {
+   ('Syntax'e.1)(e.Num)'Syntax'e.2 = <Putout 3 'Syntax error is processed correctly.'>;
+   ('Syntax'e.1)(e.Num)e.2 = <Putout 3 'Syntax ok, error is declared.'>;
+   (e.1)(e.Num)'Syntax'e.2 = <Putout 3 'Syntax error is not found.'>;
+   (e.1)(e.Num)'Monster' = <Putout 3 'Monster is faced.'>;
+   (e.1)(e.Num)e.1 = <Putout 3 'Test is passed.'>;
+   ('Timeout')(e.Num)e.2 = <Putout 3 'Test is time out.'>;
+   (e.1)(e.Num)e.2 = <Putout 3 'Test is inconsistent.'>;
+}

@@ -1,0 +1,23 @@
+$ENTRY Go
+  { 
+	= <Open 'r' 1 'test.trs'>
+	  <Open 'w' 2 'result'>
+	  <Putout 2 <RandomChoose <Mod <Random 1> 3>>>
+	  <Close 1><Close 2>;
+  }
+
+RandomChoose {
+ 0 = <Randomizer2>;
+ s.x = <Randomizer>;
+}
+
+Randomizer2 { e.1 = <Randomizer2 e.1>;}
+  
+Randomizer {
+    , <Mod <Random 1> 3> :
+     { 0 = 'False';
+       1 = 'True';
+       2 = 'True';
+       3 = 'True';
+     };
+}

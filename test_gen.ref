@@ -1,0 +1,35 @@
+$ENTRY Go
+  { 
+	= <GetTest <GetNumber>>;
+  }
+
+  GetNumber {
+   , <ExistFile 'witness.txt'> : 
+   { False = 1; 
+     True = <Open 'r' 1 'witness.txt'><ExtractNumber <Get 1>><Close 1>;
+   };
+  }
+  
+  ExtractNumber {
+    'Test'e.Num' 'e.Rest = <Add <Numb e.Num> 1>;
+  }
+  
+GetTest {
+    s.Num = <Open 'r' 3 'test_base.txt'><FindTest 3 s.Num <Get 3>><Close 3>;
+  }
+  
+FindTest {
+    s.Stream s.Num 'Test'e.Num' {'e.Rest
+    , <Numb e.Num> : 
+    { s.Num = <GenerateTestFile s.Stream (s.Num) <Get s.Stream>>;
+      s.Num2 = <FindTest s.Stream s.Num <Get s.Stream>>;
+    };
+    s.Stream s.Num e.Rest = <FindTest s.Stream s.Num <Get s.Stream>>;
+  }
+  
+GenerateTestFile {
+   s.Stream (s.Num) '\'-'e.Witness'_'e.Rest
+      = <Open 'w' 2 'witness.txt'><Putout 2 'Test's.Num' 'e.Witness><Close 2><Open 'w' 4 'test.trs'><GenerateTestFile s.Stream <Get s.Stream>>;
+      s.Stream ';'e.Rest = <Close 4>;
+      s.Stream e.Other = <Putout 4 e.Other><GenerateTestFile s.Stream <Get s.Stream>>; 
+  }
