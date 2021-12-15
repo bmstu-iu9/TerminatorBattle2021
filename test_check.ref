@@ -59,8 +59,9 @@ TestCheck {
    ('Syntax'e.1)(e.Num)'Syntax'e.2 = <Putout 3 'Syntax error is processed correctly.'>;
    ('Syntax'e.1)(e.Num)e.2 = <Putout 3 'Syntax ok, error is declared.'>;
    (e.1)(e.Num)'Syntax'e.2 = <Putout 3 'Syntax error is not found.'>;
-   (e.1)(e.Num)'Monster' = <Putout 3 'Monster is faced.'>;
-   (e.1)(e.Num)e.1 = <Putout 3 'Test is passed.'>;
    ('Timeout')(e.Num)e.2 = <Putout 3 'Test is time out.'>;
+   (e.1)(e.Num)e.1 = <Putout 3 'Test is passed.'>;
+   ('Unknown')(e.Num)e.1 = ;
+   (e.1)(e.Num)'Monster' = <Putout 3 'Monster is faced.'>;
    (e.1)(e.Num)e.2 = <Putout 3 'Test is inconsistent.'>;
 }
