@@ -32,4 +32,19 @@
 |Sht                    |  5   |    2   |   2   |   5   |
 |Жук                    |  3   |    4   |   4   |   2   |
 
-Срезы и накрытия будут завтра.
+# Срезы
+
+Так было до багфикса группы КВО:
+
+![Изначальные значения](/images/Contest_2021_1.png#gh-light-mode-only)
+![Изначальные значения](/images/Contest_2021_1_black.png#gh-dark-mode-only)
+
+Так стало после багфикса:
+
+![Окончательные значения](/images/Contest_2021_2.png#gh-light-mode-only)
+![Окончательные значения](/images/Contest_2021_2_black.png#gh-dark-mode-only)
+
+# Накрытия
+
+![Накрытия](/images/chart.png)
+
