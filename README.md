@@ -5,7 +5,7 @@
 - [SaZho Д.Жолтиков А.Савин @Klaus1901](https://github.com/Klaus1901/TFA_RK)
 - [BELIO Ю.Беликова, Т.Ионов @beauty-soup](https://github.com/beauty-soup/Hack)
 - [А. Штейников, А. Мартынов @Snake5932](https://github.com/Snake5932/TerminatorContest)
-- @kpacnayPanda и компания (репозиторий удалён :)) 
+- @kpacnayPanda и компания (репозиторий удалён авторами :)) 
 
 # Результаты на базовом наборе тестов
 
