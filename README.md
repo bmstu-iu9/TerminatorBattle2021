@@ -1,11 +1,11 @@
-# Список участников
-- П. Дьячек @Perpure
-- Д. Жук @ZhukDmitryOlegovich
-- KBO (Knuth--Bendix ordering) А. Пичугин, Д. Исмагилова, Д. Обущарова, А. Виноградов @DbnStr
-- SaZho Д.Жолтиков А.Савин @Klaus1901
-- BELIO Ю.Беликова, Т.Ионов @beauty-soup
-- Sht @Snake5932
-- @kpacnayPanda 
+# Список участников и ссылки на пруверы
+- [П. Дьячек @Perpure](https://github.com/Perpure/TerminationTRS)
+- [Д. Жук @ZhukDmitryOlegovich](https://github.com/ZhukDmitryOlegovich/rk2)
+- [KBO (Knuth--Bendix ordering) А. Пичугин, Д. Исмагилова, Д. Обущарова, А. Виноградов @DbnStr](https://github.com/DbnStr/Hackathon)
+- [SaZho Д.Жолтиков А.Савин @Klaus1901](https://github.com/Klaus1901/TFA_RK)
+- [BELIO Ю.Беликова, Т.Ионов @beauty-soup](https://github.com/beauty-soup/Hack)
+- [А. Штейников, А. Мартынов @Snake5932](https://github.com/Snake5932/TerminatorContest)
+- @kpacnayPanda и компания (репозиторий удалён :)) 
 
 # Результаты на базовом наборе тестов
 
